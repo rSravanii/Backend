@@ -1,7 +1,5 @@
 package com.bank;
 
-import java.util.Scanner;
-
 public class Account {
     // bank model means blue print of bank like major things which comes in mind
     // like account name , balance , deposit ,and withdraw.
@@ -13,7 +11,6 @@ public class Account {
         this.balance = balance;
 
     }
-
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -21,10 +18,16 @@ public class Account {
         }
 
     }
-
     public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
+        // using exception in withdrawing
+        if (amount  <= 0 ){
+            throw new IllegalArgumentException("invalid ammount");
+        }
+        else if (amount > balance ) {
+            throw new RuntimeException("the balance is insufficient");
+        } else {
             balance -= amount;
+            System.out.println( balance);
         }
 
     }
