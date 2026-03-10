@@ -109,6 +109,7 @@ class UtilityMethod{
     public static void main(String[] args){
         UtilityMethod um = new UtilityMethod();
         System.out.println(um.reverseString());
-    }// output: esrever
+    }
+    // output: esrever
 }
 

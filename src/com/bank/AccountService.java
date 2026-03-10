@@ -1,19 +1,20 @@
 package com.bank;
 
-import com.bank.*;
+import com.Exceptions.BadRequestException;
+import com.Exceptions.ResourceNotFoundException;
 
 public class AccountService {
 
     public void transfer(Account from, Account to, double amount) {
 
+        // Bad amount → BadRequestException
         if (amount <= 0) {
-            System.out.println("Invalid amount");
-            return;
+            throw new BadRequestException("Invalid amount: must be greater than zero");
         }
 
+        // Not enough money → ResourceNotFoundException
         if (from.getBalance() < amount) {
-            System.out.println("Insufficient balance");
-            return;
+            throw new ResourceNotFoundException("Insufficient balance in account");
         }
 
         from.withdraw(amount);

@@ -12,7 +12,7 @@ class dataConnect implements database {
     public void connect() {
         System.out.println("the data is connected into database");
     }
-
+    
     @Override
     public void disconnect() {
         System.out.println("the connected data is disconnected from the existing database");
@@ -32,4 +32,5 @@ public class DBMS {
 
     }
 
-}// output : the data is connected into database
+} //output : the data is connected into database
+

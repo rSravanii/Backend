@@ -19,7 +19,7 @@ Hello, sravani */
 - Scanner → class inside util */
 
 // File: MyPackage/MyClass.java
-package MyPackage;
+ //package MyPackage;
 
 public class MyClass {
     public void display() {

@@ -1,4 +1,4 @@
-// two mini projects in one day that covers all concepts of basic to core(oops) level of java programming language
+// mini projects in that covers all concepts of basic to core(oops) level of java programming language
 
 //1. Library management (console) that shows adding ,search, issue ,retur the book.
 

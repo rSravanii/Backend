@@ -54,7 +54,7 @@ class Progress {
     }
 
     // Grade method (no parameter, uses score field)
-    void grade() {
+    void grade(double score) {
         if (score > 500) {
             System.out.println("The student passed the examination");
         } else {
@@ -68,12 +68,12 @@ class Progress {
         Progress stu3 = new Progress(7, "Lolly", 400);
 
         stu1.display();
-        stu1.grade();
+        stu1.grade(800);
 
         stu2.display();
-        stu2.grade();
+        stu2.grade(600);
 
         stu3.display();
-        stu3.grade();
+        stu3.grade(400);
     }
 }

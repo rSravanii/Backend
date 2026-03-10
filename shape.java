@@ -8,7 +8,7 @@ public interface shape {
     //void rectangle(double length, double breadth);
 }
 class circle implements shape{
-    private double radius ;
+    private double radius ;//
     
     public circle(double radius){
         this.radius = radius;

@@ -1,23 +1,37 @@
 package com.bank;
 
+import com.Exceptions.*;
+
 public class App {
     public static void main(String[] args) {
-        Account ac1 = new Account("AKRKS", 10000);
-        Account ac2 = new Account("SRRS", 5000);
 
         AccountService service = new AccountService();
-        System.out.println("Before Tranfer: ");
-        System.out.println("ac1 Balance: " + ac1.getBalance());
-        System.out.println("ac2 Balance: " + ac2.getBalance());
 
-        try{
-        service.transfer(ac1, ac2, 3000);
-        System.out.println("\n after transfer");
-        System.out.println("ac1 balance " + ac1.getBalance());
-        System.out.println("ac2 balance " + ac2.getBalance());
+        Account alice = new Account("Alice", 1000);
+        Account bob = new Account("Bob", 500);
+
+        // Test 1 — invalid amount
+        try {
+            service.transfer(alice, bob, -100);
+        } catch (Exception ex) {
+            ErrorResponse error = GlobalExceptionHandler.handle(ex);
+            System.out.println(error);
         }
-        catch (Exception e){
-            e.printStackTrace();
+
+        // Test 2 — insufficient balance
+        try {
+            service.transfer(bob, alice, 9999);
+        } catch (Exception ex) {
+            ErrorResponse error = GlobalExceptionHandler.handle(ex);
+            System.out.println(error);
+        }
+
+        // Test 3 — valid transfer
+        try {
+            service.transfer(alice, bob, 200);
+        } catch (Exception ex) {
+            ErrorResponse error = GlobalExceptionHandler.handle(ex);
+            System.out.println(error);
         }
     }
 }
